@@ -1,0 +1,12 @@
+[Unit]
+Description=Capture The Requests - CTF Listener
+After=network-online.target
+
+[Service]
+Type=simple
+User=lawcky
+ExecStart=/bin/python3 /listener/capturetherequests.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
