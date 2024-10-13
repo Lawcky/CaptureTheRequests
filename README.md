@@ -4,7 +4,7 @@ This is a simple app in Python using Flask that'll create an Endpoint for any CT
 It'll log every requests it receives inside a file to simplify the process of checking for responses from targets.
 
 ## for now it can : 
-- Log and capute any requests made on its endpoint
+- Log and capture any requests made on its endpoints
 - Serv as an HTTP server for any files / payload that could be needed
 
 ## Next steps
