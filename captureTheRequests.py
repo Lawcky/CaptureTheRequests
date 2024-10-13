@@ -67,7 +67,16 @@ def renfer_file(filename):
     else:
         return jsonify({"error": "File not found"}), 404
 
+@app.route(CUSTOM_HTTP_PATH + '/dl/<path:filename>', methods=['GET'])
+def download_file(filename):
 
+    base_directory = os.path.abspath(os.path.join(os.getcwd(), HTTP_SERVER_DIRECTORY_PATH))
+    file_path = os.path.join(base_directory, filename)
+
+    if os.path.exists(file_path):
+        return send_file(file_path, as_attachment=True)
+    else:
+        return jsonify({"error": "File not found"}), 404
 
 # run the app on the port
 if __name__ == '__main__':
